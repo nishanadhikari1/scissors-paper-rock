@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e46b219ce0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <section class="main">
+        <div class="wrapper">
+            <div class="static-txt">Let's Play</div>
+            <ul class="dynamic-txts">
+              <li><span>SCISSORS</span></li>
+              <li><span>PAPER</span></li>
+              <li><span>ROCK</span></li>
+            </ul>
+          </div>
+        <div class="container">
+            <div class="selection">
+                <div class="scissor"><i class="fa-solid fa-hand-scissors fa-rotate-90"></i></div>
+            </div>
+            <div class="selection">
+                <div class="paper"><i class="fa-solid fa-hand"></i></div>
+            </div>
+            <div class="selection">
+                <div class="rock"><i class="fa-solid fa-hand-fist"></i></div>
+            </div>
+        </div>
+        <div class="results">
+            <p>Your score: </p> <span id ="my-score"></span>
+            <p>Computer's score: </p> <span id ="my-score"></span>
+            <span id="result">Result</span>
+        </div>
+    </section>
 </body>
 </html>

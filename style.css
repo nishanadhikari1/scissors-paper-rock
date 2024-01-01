@@ -1,0 +1,153 @@
+:root {
+  --primary-color: #05386b;
+  --secondary-color: #379683;
+  --helper-color: #5cdb95;
+  --text-color: #fbeec1;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background: var(--primary-color);
+}
+.wrapper {
+  display: flex;
+  position: relative;
+  top: 30px;
+}
+.wrapper .static-txt {
+  color: var(--text-color);
+  font-size: 70px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts {
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li {
+  list-style: none;
+  color: var(--helper-color);
+  font-size: 60px;
+  font-weight: 400;
+  position: relative;
+  top: 0;
+  animation: slide 9s steps(3) infinite;
+}
+@keyframes slide {
+  100% {
+    top: -270px;
+  }
+}
+.dynamic-txts li span {
+  position: relative;
+  margin: 5px 0;
+  line-height: 80px;
+}
+.dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--primary-color);
+  border-left: 2px solid var(--helper-color);
+  animation: typing 3s linear infinite;
+}
+@keyframes typing {
+  40%, 60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
+.container{
+  height: 550px;
+  width: 800px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.selection{
+  height: 300px;
+  width: 220px;
+  background-color: var(--secondary-color);
+  border-radius: 10%;
+  box-shadow:  0 0 20px 6px var(--helper-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.35s;
+}
+.selection:hover{
+  box-shadow:  0 0 20px 12px var(--helper-color);
+  transform: scale(1.02);
+}
+.scissor, .paper, .rock{
+  font-size: 7rem;
+  color: var(--text-color);
+  text-shadow: 0 0 20px var(--helper-color);
+}
+.results{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.7em;
+  color: var(--text-color);
+}
+@media(max-width:850px){
+  .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  .wrapper .static-txt{
+    font-size: 4rem;
+  }
+  .wrapper .dynamic-txts{
+    font-size: 4rem;
+  }
+  .container{
+    height: 20rem;
+    width: 30rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .selection{
+    height:12rem ;
+    width: 8rem;
+  }
+  .scissor, .paper, .rock{
+    font-size: 4em;
+  }
+  .results{
+    font-size: 1.5rem;
+  }
+}
+@media(max-width:530px){
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    justify-content: space-around;
+
+  }
+  .selection{
+    height:10rem ;
+    width: 7rem;
+}
+}
